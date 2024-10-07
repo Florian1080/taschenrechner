@@ -9,24 +9,47 @@ class TaschenrechnerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-title: 'Taschenrechner App',
-home: TaschenrechnerApp (),
-
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Taschenrechner App',
+      home: TaschenrechnerWidget(),
     );
   }
 }
 
-class _TaschenrechnerWidgetState extends StatefulWidget {
-  const _TaschenrechnerWidgetState({super.key});
+class TaschenrechnerWidget extends StatefulWidget {
+  const TaschenrechnerWidget({super.key});
 
   @override
-  State<_TaschenrechnerWidgetState> createState() => __TaschenrechnerWidgetStateState();
+  State<TaschenrechnerWidget> createState() => TaschenrechnerWidgetState();
 }
 
-class __TaschenrechnerWidgetStateState extends State<_TaschenrechnerWidgetState> {
+class TaschenrechnerWidgetState extends State<TaschenrechnerWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Taschenrechner',
+          textAlign: TextAlign.center,
+        ),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 100.0,
+            color: Colors.blueGrey,
+          ),
+          Container(
+            height: 100.0,
+            color: Colors.amber,
+          ),
+          Container(
+            height: 100.0,
+            color: Colors.lightBlue,
+          )
+        ],
+      ),
+    );
   }
 }
